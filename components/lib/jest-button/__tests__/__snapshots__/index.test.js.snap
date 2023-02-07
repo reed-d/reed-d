@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button renders correctly 1`] = `
+<button class="btn-base type-default">
+  <!--v-if-->Follow
+</button>
+`;
+
+exports[`Button 测试渲染是否正确 1`] = `
+<button class="btn-base type-default">
+  <!--v-if-->Follow
+</button>
+`;

@@ -1,167 +1,178 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
-  <hr />
-  <rd-button type="primary">提交</rd-button>
-  <rd-button>提交</rd-button>
-  <rd-button type="dashed">提交</rd-button>
-  <rd-button type="text">text</rd-button>
-  <rd-button type="link">link</rd-button>
-  <br/>
-  <rd-button shape="round" type="primary">提交</rd-button>
-  <rd-button shape="circle" type="primary">O</rd-button>
-  <br/>
-  <rd-button type="primary" size="large">确定</rd-button>
-  <rd-button size="small">确定</rd-button>
-  <br/>
-  <rd-button type="primary" danger>提交</rd-button>
-  <rd-button danger>提交</rd-button>
-  <rd-button type="dashed" danger>提交</rd-button>
-  <rd-button type="text" danger>text</rd-button>
-  <rd-button type="link" danger>link</rd-button>
-  <br/>
-  <rd-button type="primary" size="middle" shape="circle">
-    <span class="iconfont icon-sousuo-xianxing"></span>
-  </rd-button>
-  <rd-button shape="round">
-    <template #icon-left>
+  <div class="rd-button">
+    <rd-button type="primary">提交</rd-button>
+    <rd-button>提交</rd-button>
+    <rd-button type="dashed">提交</rd-button>
+    <rd-button type="text">text</rd-button>
+    <rd-button type="link">link</rd-button>
+    <br/>
+    <rd-button shape="round" type="primary">提交</rd-button>
+    <rd-button shape="circle" type="primary">O</rd-button>
+    <br/>
+    <rd-button type="primary" size="large">确定</rd-button>
+    <rd-button size="small">确定</rd-button>
+    <br/>
+    <rd-button type="primary" danger>提交</rd-button>
+    <rd-button danger>提交</rd-button>
+    <rd-button type="dashed" danger>提交</rd-button>
+    <rd-button type="text" danger>text</rd-button>
+    <rd-button type="link" danger>link</rd-button>
+    <br/>
+    <rd-button type="primary" size="middle" shape="circle">
       <span class="iconfont icon-sousuo-xianxing"></span>
-    </template>
-    搜索
-  </rd-button>
-  <rd-button type="primary" loading>
-    加载中...
-  </rd-button>
-  <rd-button type="primary" loading size="middle" shape='circle'></rd-button>
-  <br/>
-  <div style="width:500px;margin:0 auto">
-    <rd-button block>
-      <template #icon-left><span class="iconfont icon-sousuo-xianxing"></span></template>
+    </rd-button>
+    <rd-button shape="round">
+      <template #icon-left>
+        <span class="iconfont icon-sousuo-xianxing"></span>
+      </template>
       搜索
     </rd-button>
+    <rd-button type="primary" loading>
+      加载中...
+    </rd-button>
+    <rd-button type="primary" loading size="middle" shape='circle'></rd-button>
     <br/>
-    <rd-button block type="dashed" shape="round">提交</rd-button>
+    <div style="width:500px;margin:0 auto">
+      <rd-button block>
+        <template #icon-left><span class="iconfont icon-sousuo-xianxing"></span></template>
+        搜索
+      </rd-button>
+      <br/>
+      <rd-button block type="dashed" shape="round">提交</rd-button>
+      <br/>
+      <rd-button block type="primary">确定</rd-button>
+    </div>
     <br/>
-    <rd-button block type="primary">确定</rd-button>
-  </div>
-  <br/>
-  <rd-button disabled>
+    <rd-button disabled>
       发送(disabled)
-  </rd-button>
-  <rd-button type="text" disabled>
-    text(disabled)
-  </rd-button>
-   <rd-button type="link" disabled>
-    link(disabled)
-  </rd-button>
+    </rd-button>
+    <rd-button type="text" disabled>
+      text(disabled)
+    </rd-button>
+    <rd-button type="link" disabled>
+      link(disabled)
+    </rd-button>
+  </div>
   <hr/>
-  <rd-avatar :padding='5' shade imgSrc="http://8.142.19.67:3000/images/cat1.jpg"/>
-  <rd-avatar :padding='2' shade imgSrc="http://8.142.19.97:3000/images/cat.jpg"/>
-  <rd-avatar :padding='2' shade shape="square" imgSrc="http://8.142.19.67:3000/images/cat2.jpg"/>
-  <rd-avatar size="small" bg="green">Tom</rd-avatar>
-  <rd-avatar bg="pink">Alen</rd-avatar>
-  <rd-avatar bg="blue">Jack</rd-avatar>
-   <rd-table :columns="columns" :dataSource="[]" loading strip>
-    <template #headerCell="{column}">
-      <template v-if="column.key=='name'">
-        <span>😊{{column.title}}</span>
+  <div class="avatar">
+    <rd-avatar :padding='5' shade imgSrc="http://8.142.19.67:3000/images/cat1.jpg"/>
+    <rd-avatar :padding='2' shade imgSrc="http://8.142.19.97:3000/images/cat.jpg"/>
+    <rd-avatar :padding='2' shade shape="square" imgSrc="http://8.142.19.67:3000/images/cat2.jpg"/>
+    <rd-avatar size="small" bg="green">Tom</rd-avatar>
+    <rd-avatar bg="pink">Alen</rd-avatar>
+    <rd-avatar bg="blue">Jack</rd-avatar>
+  </div>
+  <hr/>
+  <div class="table">
+    <rd-table :columns="columns" :dataSource="[]" loading strip>
+      <template #headerCell="{column}">
+        <template v-if="column.key=='name'">
+          <span>😊{{column.title}}</span>
+        </template>
       </template>
-    </template>
-    <template #bodyCell="{column,text,index,record}">
-      <template v-if="column.key=='name'">
-        <a href="">{{text}}</a>
+      <template #bodyCell="{column,text,index,record}">
+        <template v-if="column.key=='name'">
+          <a href="">{{text}}</a>
+        </template>
+        <template v-if="column.key=='action'">
+          <button @click="edit(record,index)">编辑</button>
+          <button @click="del(record,index)">删除</button>
+        </template>
       </template>
-       <template v-if="column.key=='action'">
-      <button @click="edit(record,index)">编辑</button>
-      <button @click="del(record,index)">删除</button>
-    </template>
-    </template>
-    <template #footer><h4>表尾</h4></template>
-    <template #title><h4>标题</h4></template>
-  </rd-table>
-  <hr>
-  <rd-table :columns="columns" :dataSource="[]" strip>
-    <template #headerCell="{column}">
-      <template v-if="column.key=='name'">
-        <span>😊{{column.title}}</span>
+      <template #footer><h4>表尾</h4></template>
+      <template #title><h4>标题</h4></template>
+    </rd-table>
+    <hr>
+    <rd-table :columns="columns" :dataSource="[]" strip>
+      <template #headerCell="{column}">
+        <template v-if="column.key=='name'">
+          <span>😊{{column.title}}</span>
+        </template>
       </template>
-    </template>
-    <template #bodyCell="{column,text,index,record}">
-      <template v-if="column.key=='name'">
-        <a href="">{{text}}</a>
+      <template #bodyCell="{column,text,index,record}">
+        <template v-if="column.key=='name'">
+          <a href="">{{text}}</a>
+        </template>
+        <template v-if="column.key=='action'">
+          <button @click="edit(record,index)">编辑</button>
+          <button @click="del(record,index)">删除</button>
+        </template>
       </template>
-       <template v-if="column.key=='action'">
-      <button @click="edit(record,index)">编辑</button>
-      <button @click="del(record,index)">删除</button>
-    </template>
-    </template>
-    <template #footer><h4>表尾</h4></template>
-    <template #title>标题</template>
-  </rd-table>
-  <hr>
-  <rd-table @change="handleChange" @expand = "handleExpand" :columns="columns" :dataSource="data" border strip>
-    <template #headerCell="{column}">
-      <template v-if="column.key=='name'">
-        <span>😊{{column.title}}</span>
+      <template #footer><h4>表尾</h4></template>
+      <template #title>标题</template>
+    </rd-table>
+    <hr>
+    <rd-table @change="handleChange" @expand = "handleExpand" :columns="columns" :dataSource="data" border strip>
+      <template #headerCell="{column}">
+        <template v-if="column.key=='name'">
+          <span>😊{{column.title}}</span>
+        </template>
       </template>
-    </template>
-    <template #bodyCell="{column,text,index,record}">
-      <template v-if="column.key=='name'">
-        <a href="">{{text}}</a>
+      <template #bodyCell="{column,text,index,record}">
+        <template v-if="column.key=='name'">
+          <a href="">{{text}}</a>
+        </template>
+        <template v-if="column.key=='action'">
+          <button @click="edit(record,index)">编辑</button>
+          <button @click="del(record,index)">删除</button>
+        </template>
       </template>
-       <template v-if="column.key=='action'">
-      <button @click="edit(record,index)">编辑</button>
-      <button @click="del(record,index)">删除</button>
-    </template>
-    </template>
-    <template #footer><h4>表尾</h4></template>
-    <template #title><h4>标题</h4></template>
-    <template #expandeRowRender="{record}">
-      {{record.describe}}
-    </template>
-  </rd-table>
-  <hr>
-  <rd-table :columns="columns" :dataSource="data" :scroll="{width:600}" strip>
-    <template #headerCell="{column}">
-      <template v-if="column.key=='name'">
-        <span>😊{{column.title}}</span>
+      <template #footer><h4>表尾</h4></template>
+      <template #title><h4>标题</h4></template>
+      <template #expandeRowRender="{record}">
+        {{record.describe}}
       </template>
-    </template>
-    <template #bodyCell="{column,text,index,record}">
-      <template v-if="column.key=='name'">
-        <a href="">{{text}}</a>
+    </rd-table>
+    <hr>
+    <rd-table :columns="columns" :dataSource="data" :scroll="{width:600}" strip>
+      <template #headerCell="{column}">
+        <template v-if="column.key=='name'">
+          <span>😊{{column.title}}</span>
+        </template>
       </template>
-       <template v-if="column.key=='action'">
-      <button @click="edit(record,index)">编辑</button>
-      <button @click="del(record,index)">删除</button>
-    </template>
-    </template>
-   
-  </rd-table>
-  <hr>
-  <rd-table :columns="columns" :dataSource="data" :scroll="{height:200}" strip>
-    <template #headerCell="{column}">
-      <template v-if="column.key=='name'">
-        <span>😊{{column.title}}</span>
+      <template #bodyCell="{column,text,index,record}">
+        <template v-if="column.key=='name'">
+          <a href="">{{text}}</a>
+        </template>
+        <template v-if="column.key=='action'">
+          <button @click="edit(record,index)">编辑</button>
+          <button @click="del(record,index)">删除</button>
+        </template>
       </template>
-    </template>
-    <template #bodyCell="{column,text,index,record}">
-      <template v-if="column.key=='name'">
-        <a href="">{{text}}</a>
+
+    </rd-table>
+    <hr>
+    <rd-table :columns="columns" :dataSource="data" :scroll="{height:200}" strip>
+      <template #headerCell="{column}">
+        <template v-if="column.key=='name'">
+          <span>😊{{column.title}}</span>
+        </template>
       </template>
-       <template v-if="column.key=='action'">
-      <button @click="edit(record,index)">编辑</button>
-      <button @click="del(record,index)">删除</button>
-    </template>
-    </template>
-   
-  </rd-table>
+      <template #bodyCell="{column,text,index,record}">
+        <template v-if="column.key=='name'">
+          <a href="">{{text}}</a>
+        </template>
+        <template v-if="column.key=='action'">
+          <button @click="edit(record,index)">编辑</button>
+          <button @click="del(record,index)">删除</button>
+        </template>
+      </template>
+
+    </rd-table>
+  </div  >
+  <hr/>
+  <rd-select style="width: 300px"></rd-select>
+  <rd-breadcrumb></rd-breadcrumb>
+  <rd-checkbox></rd-checkbox>
+  <rd-input style="width: 300px"></rd-input>
+
 </template>
 <script setup lang='ts'>
 import {reactive} from 'vue'
+import RdSelect from "~/lib/select/src/main.vue";
+import RdBreadcrumb from "~/lib/breadcrumb/src/breadcrumb.vue";
+import RdCheckbox from "~/lib/Ckeckbox/src/Checkbox.vue";
+import RdInput from "~/lib/input/main.vue";
 type TableData = {
   key:string;
   name:string;

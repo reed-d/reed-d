@@ -1,5 +1,4 @@
 import { App } from "vue";
-import RdSelect from "./select/main.vue";
 import RdBreadcrumb from "./breadcrumb/src/breadcrumb.vue";
 import RdBreadcrumbItem from "./breadcrumb/src/breadcrumb-item.vue";
 import RdChenckbox from "./Ckeckbox/src/Checkbox.vue";
@@ -9,7 +8,6 @@ import rdTable from "./table/index";
 import rdSelect from "./select/src/main.vue";
 import rdButton from "./button/index";
 const components = [
-  RdSelect,
   RdBreadcrumb,
   RdBreadcrumbItem,
   RdChenckbox,
@@ -29,7 +27,6 @@ const install = (app: App): void => {
 };
 
 export {
-  RdSelect,
   RdBreadcrumb,
   RdBreadcrumbItem,
   RdChenckbox,

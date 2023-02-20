@@ -1,17 +1,18 @@
 <template>
   <span class="rd-breadcrumb-item">
-    <span :class="['rd-breadcrumb-item-inner', { islink: to.path }]" ref="link">
+    <span :class="[`rd-breadcrumb-item-inner`,{'islink': to.path}]" ref="link">
       <slot></slot>
     </span>
-    <rd-icon v-if="separatorIcon" class="rd-breadcrumb-separator" :size="12">
+    <!-- <rd-icon v-if="separatorIcon" class="rd-breadcrumb-separator" :size="12">
       <component :is="separatorIcon"></component>
-    </rd-icon>
-    <span v-else class="rd-breadcrumb-separator">{{ separator }}</span>
+    </rd-icon> -->
+    <span class="rd-breadcrumb-separator">{{ separator }}</span>
   </span>
 </template>
 
 <script lang="ts">
 import {
+  computed,
   defineComponent,
   getCurrentInstance,
   inject,
@@ -26,7 +27,7 @@ export default defineComponent({
     // to,为路由跳转对象
     to: {
       type: Object,
-      default: () => ({}),
+      // default: () => ({}),
     },
     // replace：来操控是否开启覆盖,默认为FALSE
     //push： 追加历史记录，即在前一条的记录上在新加一条浏览记录
@@ -45,6 +46,15 @@ export default defineComponent({
     const instance = getCurrentInstance();
     // 获取vue-router实例
     const router = instance.appContext.config.globalProperties.$router;
+
+    // const isexist:boolean = props.to.path
+
+    // const islink = computed(() => {
+    //   return {
+    //     [`islink`]: isexist
+    //   }
+    // })
+
     onMounted(() => {
       // 路由跳转
       // 组件(第一次)挂载完后执行
@@ -58,6 +68,7 @@ export default defineComponent({
       link,
       separator: parent?.separator,
       separatorIcon: parent?.separatorIcon,
+      // islink
     };
   },
 });
@@ -81,9 +92,11 @@ export default defineComponent({
     text-decoration: none;
     color: #303133;
     transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+
     a {
       color: #303133;
     }
+
     &.islink {
       &:hover {
         color: #be4e35a7;

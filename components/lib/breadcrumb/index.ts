@@ -1,5 +1,5 @@
 import { App } from "vue";
-import RdBreadcrumb from "./src/breadcrum.vue";
+import RdBreadcrumb from "./src/breadcrumb.vue";
 import RdBreadcrumbItem from "./src/breadcrumb-item.vue";
 
 RdBreadcrumb.install = (app: App) => {

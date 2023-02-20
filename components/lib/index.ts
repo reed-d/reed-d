@@ -1,6 +1,6 @@
 import { App } from "vue";
 import RdSelect from "./select/main.vue";
-import RdBreadcrumb from "./breadcrumb/src/breadcrum.vue";
+import RdBreadcrumb from "./breadcrumb/src/breadcrumb.vue";
 import RdBreadcrumbItem from "./breadcrumb/src/breadcrumb-item.vue";
 import RdChenckbox from "./Ckeckbox/src/Checkbox.vue";
 import RdCheckboxGroup from "./Ckeckbox/src/CheckboxGroup.vue";

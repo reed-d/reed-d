@@ -87,7 +87,7 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 $small-size: 50px;
-$default-size: 100px;
+$default-size: 75px;
 $large-size: 100px;
 $white: #fff;
 $default-background: #c0cccb;

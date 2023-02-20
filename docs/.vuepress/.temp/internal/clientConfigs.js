@@ -5,8 +5,7 @@ import clientConfig3 from 'C:/Users/86188/Desktop/项目/reed-d/node_modules/@vu
 import clientConfig4 from 'C:/Users/86188/Desktop/项目/reed-d/node_modules/@vuepress/plugin-nprogress/lib/client/config.js'
 import clientConfig5 from 'C:/Users/86188/Desktop/项目/reed-d/node_modules/@vuepress/plugin-theme-data/lib/client/config.js'
 import clientConfig6 from 'C:/Users/86188/Desktop/项目/reed-d/node_modules/@vuepress/theme-default/lib/client/config.js'
-import clientConfig7 from 'C:/Users/86188/Desktop/项目/reed-d/node_modules/vuepress-plugin-demoblock-plus/dist/client/config.mjs'
-import clientConfig8 from 'C:/Users/86188/Desktop/项目/reed-d/docs/.vuepress/client.js'
+import clientConfig7 from 'C:/Users/86188/Desktop/项目/reed-d/docs/.vuepress/client.js'
 
 export const clientConfigs = [
   clientConfig0,
@@ -17,5 +16,4 @@ export const clientConfigs = [
   clientConfig5,
   clientConfig6,
   clientConfig7,
-  clientConfig8,
 ]

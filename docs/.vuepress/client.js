@@ -1,8 +1,8 @@
 import { defineClientConfig } from '@vuepress/client'
-import rdSelect from "./components/select/src/main.vue";
+import buttonl from "./components/buttonl.vue";
 export default defineClientConfig({
     enhance({ app, router, siteData }) {
-        app.component(rdSelect.name, rdSelect)
+        app.component(buttonl.name, buttonl)
     },
     setup() {},
     rootComponents: [],

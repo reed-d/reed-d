@@ -1,12 +1,12 @@
 import { shallowMount } from "@vue/test-utils";
-import gButton from "../../components/lib/button2/main.vue";
+import  rdButton  from "../../components/lib/button";
 
 describe("HelloWorld.vue", () => {
   it("renders props.btnType when passed", () => {
-    const btnType = "default";
-    const wrapper = shallowMount(gButton, {
-      props: { btnType },
+    const type = "default";
+    const wrapper = shallowMount(rdButton, {
+      props: { type },
     });
-    expect(wrapper.props().btnType).toBe("default");
+    expect(wrapper.props().type).toBe("default");
   });
 });

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1676468126933" clover="3.2.0">
-  <project timestamp="1676468126933" name="All files">
-    <metrics statements="205" coveredstatements="162" conditionals="157" coveredconditionals="113" methods="43" coveredmethods="30" elements="405" coveredelements="305" complexity="0" loc="205" ncloc="205" packages="5" files="7" classes="7"/>
+<coverage generated="1676551346804" clover="3.2.0">
+  <project timestamp="1676551346804" name="All files">
+    <metrics statements="211" coveredstatements="167" conditionals="161" coveredconditionals="117" methods="45" coveredmethods="31" elements="417" coveredelements="315" complexity="0" loc="211" ncloc="211" packages="5" files="7" classes="7"/>
     <package name="avatar.src">
       <metrics statements="36" coveredstatements="29" conditionals="26" coveredconditionals="17" methods="7" coveredmethods="5"/>
       <file name="main.vue" path="E:\Vue_NotJs\青训营大项目\reed-d\components\lib\avatar\src\main.vue">
@@ -44,32 +44,38 @@
         <line num="123" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="button2">
+    <package name="button">
       <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-      <file name="index.ts" path="E:\Vue_NotJs\青训营大项目\reed-d\components\lib\button2\index.ts">
+      <file name="index.ts" path="E:\Vue_NotJs\青训营大项目\reed-d\components\lib\button\index.ts">
         <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
+        <line num="2" count="2" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
         <line num="4" count="0" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
       </file>
     </package>
-    <package name="button2.src">
-      <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-      <file name="main.vue" path="E:\Vue_NotJs\青训营大项目\reed-d\components\lib\button2\src\main.vue">
-        <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
-        <line num="24" count="1" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
-        <line num="27" count="1" type="stmt"/>
-        <line num="33" count="1" type="stmt"/>
-        <line num="34" count="1" type="stmt"/>
+    <package name="button.src">
+      <metrics statements="18" coveredstatements="17" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="3"/>
+      <file name="main.vue" path="E:\Vue_NotJs\青训营大项目\reed-d\components\lib\button\src\main.vue">
+        <metrics statements="18" coveredstatements="17" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="3"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="40" count="3" type="stmt"/>
+        <line num="41" count="3" type="stmt"/>
+        <line num="42" count="3" type="stmt"/>
+        <line num="44" count="3" type="stmt"/>
+        <line num="48" count="3" type="stmt"/>
+        <line num="55" count="2" type="stmt"/>
+        <line num="56" count="2" type="stmt"/>
+        <line num="57" count="2" type="stmt"/>
+        <line num="58" count="2" type="stmt"/>
+        <line num="59" count="2" type="stmt"/>
+        <line num="60" count="2" type="stmt"/>
+        <line num="65" count="3" type="stmt"/>
+        <line num="66" count="0" type="cond" truecount="2" falsecount="0"/>
+        <line num="79" count="2" type="stmt"/>
+        <line num="80" count="2" type="stmt"/>
       </file>
     </package>
     <package name="table.src">

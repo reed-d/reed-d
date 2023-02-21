@@ -1,76 +1,247 @@
+# Select 下拉框
 
-# Select 下拉选择框
-
-## 使用方式
-
-
-
-```javascript
-import RdSelect from 'Reed-d';
-Vue.use(RdSelect);
+## 使用方法
+```js
+import rdSelect from 'Reed-d';
+Vue.use(rdSelect);
 ```
+## 实例
+### 基本
+::: demo
 
-## 示例
-### 常规用法
-::: tip
-```html
+```vue
 <template>
-  <div class="box-vue">Vue {{ message }}</div>
+  <rd-select
+      id="select"
+      style="width: 200px"
+      :options="options"
+      v-model="value"></rd-select>
 </template>
-<script>
-export default {
-  data: () => ({ message: 'Hello World' })
-}
+<script setup lang='ts'>
+import {ref} from 'vue'
+const value = ref("1");
+const options =  [
+  {
+    label: "时间会回答成长",
+    value: "1",
+  },
+  {
+    label: "成长会回答梦想",
+    value: "2",
+  },
+  {
+    label: "梦想会回答生活",
+    value: "3",
+  },
+  {
+    label: "生活回答你我的模样",
+    value: "4",
+  },
+  {
+    label: "海洋会回答江湖",
+    value: "5",
+  },
+  {
+    label: "江湖会回答河流",
+    value: "6",
+  },
+  {
+    label: "河流会回答浪潮",
+    value: "7",
+  },
+  {
+    label: "一起跃入人海",
+    value: "8",
+  },
+  {
+    label: "做一朵奔涌的浪花",
+    value: "9",
+  },
+  {
+    label: "。。。",
+    value: "10",
+  },
+];
 </script>
-<style>
-.box-vue { color: red; }
-</style>
-```   
+```
+:::
+### 禁用状态
+::: demo 禁用状态
+```vue
+<template>
+  <rd-select
+    id="select"
+    style="width: 200px"
+    :options="options"
+    v-model="value"
+    disabled
+  />
+</template>
+
+<script setup lang="ts">
+import {ref} from 'vue';
+const value = ref("1");
+const options = [
+  {
+    label: "时间会回答成长",
+    value: "1",
+    disabled: true,
+  },
+  {
+    label: "成长会回答梦想",
+    value: "2",
+  },
+  {
+    label: "梦想会回答生活",
+    value: "3",
+    disabled: true,
+  },
+  {
+    label: "生活回答你我的模样",
+    value: "4",
+  },
+  {
+    label: "海洋会回答江湖",
+    value: "5",
+    disabled: true,
+  },
+  {
+    label: "江湖会回答河流",
+    value: "6",
+  },
+  {
+    label: "河流会回答浪潮",
+    value: "7",
+    disabled: true,
+  },
+  {
+    label: "一起跃入人海",
+    value: "8",
+  },
+  {
+    label: "做一朵奔涌的浪花",
+    value: "9",
+  },
+  {
+    label: "。。。",
+    value: "10",
+  },
+];
+</script>
+```
 :::
 
-## 基础用法
-
-基础的按钮用法。
-
-:::demo 此处放置代码示例的描述信息，支持 `Markdown` 语法，**描述信息只支持单行**
-
-```html
+### 多选
+::: demo
+```vue
 <template>
-  <div class="red-center-text">
-      <p>{{ message }}</p>
-      <input v-model="message" placeholder="Input something..."/>
-  </div>
+  <rd-select
+    id="select"
+    style="width: 400px"
+    :options="options"
+    v-model="value"
+    multiple
+    placeholder="Please Choose"
+    clearable
+  />
 </template>
-<script>
-export default {
-  data() {
-    return {
-      message: 'Hello Vue'
-    }
-  }
-}
-</script>
-<style>
-.red-center-text { 
-  color: #ff7875;
-  text-align: center;
-}
-</style>
-``` 
 
+<script setup lang="ts">
+import { ref } from 'vue';
+const value = ref(["song0", "song3", "song4"]);
+const options = [
+  {
+    label: "Everybody's Got Something to Hide Except Me and My Monkey",
+    value: "song0",
+    disabled: true,
+  },
+  {
+    label: "Drive My Car",
+    value: "song1",
+  },
+  {
+    label: "Norwegian Wood",
+    value: "song2",
+  },
+  {
+    label: "You Won't See",
+    value: "song3",
+    disabled: true,
+  },
+  {
+    label: "Nowhere Man",
+    value: "song4",
+  },
+  {
+    label: "Think For Yourself",
+    value: "song5",
+  },
+  {
+    label: "The Word",
+    value: "song6",
+  },
+  {
+    label: "Michelle",
+    value: "song7",
+    disabled: true,
+  },
+  {
+    label: "What goes on",
+    value: "song8",
+  },
+  {
+    label: "Girl",
+    value: "song9",
+  },
+  {
+    label: "I'm looking through you",
+    value: "song10",
+  },
+  {
+    label: "In My Life",
+    value: "song11",
+  },
+  {
+    label: "Wait",
+    value: "song12",
+  },
+];
+</script>
+```
+:::
+
+### 远程搜索
+::: demo
+```vue
+<template>
+  <rd-select
+    id="select"
+    style="width: 400px"
+    placeholder="Please Choose"
+    remote
+  />
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue';
+
+</script>
+```
 :::
 
 ## API
+### Select
+| 参数          | 说明     | 类型                        | 默认值   |
+|-------------|--------|---------------------------|-------|
+| v-model     | 绑定值    | boolean / string / number | -     |
+| placeholder | 占位符    | string                    | 请选择   |
+| clearable   | 可清除选项  | boolean                   | false | 
+| disabled    | 是否禁用   | boolean                   | false |
+| options     | 配置选项内容 | Array                     | []    |
+| multiple   | 是否多选   | boolean                   | false |
 
-### Attributes
-
-|      参数       | 说明                                                                |   类型    | 默认值  |
-| :-------------: | ------------------------------------------------------------------- | :-------: | :-----: |
-|  `render-type`  | 数据渲染方式，有两种：`html` 、`json`                               | `String`  | `html`  |
-|     `data`      | 渲染的时间数据                                                      | `Object`  |    -    |
-|    `height`     | 滚动条 brush 的高度                                                 | `Number`  |  `14`   |
-|    `margin`     | 文字和时间轴之间的 margin 距离                                      | `Number`  |  `19`   |
-|  `orientation`  | 文字朝向                                                            | `String`  |  `top`  |
-|    `tooltip`    | 悬浮在节点上的 tooltip 文字展示                                     | `String`  |    -    |
-|    `nowrap`     | 是否换行，本质是限制 brush resize 拉长的限制                        | `Boolean` | `false` |
-| `brushMaxWidth` | Brush 最大宽度（对应控制 timeline 缩小)，当 nowrap 为 true 时才生效 | `Number`  |  `500`  |
+### 事件
+| 事件名称        | 说明     | 回调参数 |
+|-------------|--------|------|
+| change     | 选中值发生变化时触发    | 选中的值 |
+| clear | 在点击由 clearable 属性生成的清空按钮时触发    | -    | 

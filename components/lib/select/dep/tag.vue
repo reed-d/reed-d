@@ -12,8 +12,8 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import { Close } from "@vicons/ionicons5";
-import JwIcon from "~/lib/select/dep/icon.vue";
-import JwEllipsis from "~/lib/select/dep/ellipsis.vue";
+import JwIcon from "./icon.vue";
+import JwEllipsis from "./ellipsis.vue";
 const props = defineProps({
   type: {
     type: String,

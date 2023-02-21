@@ -1,104 +1,37 @@
 {
-  "name": "reed-d",
-  "version": "0.1.0",
-  "private": true,
+  "name": "vuepress-demo",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "license": "MIT",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:dev": "vuepress dev docs --debug",
+    "docs:build": "cross-env BASE=/vuepress-demo/ vuepress build docs --clean-cache",
+    "docs:serve": "serve docs/.vuepress/dist"
   },
-  "dependencies": {
+  "devDependencies": {
     "@vicons/ionicons4": "^0.12.0",
     "@vicons/ionicons5": "^0.12.0",
     "@vicons/tabler": "^0.12.0",
     "@vicons/utils": "^0.1.4",
-    "@vuepress/client": "^2.0.0-beta.60",
-    "@vuepress/theme-default": "^2.0.0-beta.60",
-    "@vuepress/utils": "^2.0.0-beta.60",
-    "core-js": "^3.8.3",
-    "identity-obj-proxy": "^3.0.0",
-    "vue": "^3.2.44",
-    "vue-router": "^4.0.3",
+    "@vue/compiler-sfc": "3.2.44",
+    "@vue/test-utils": "^2.3.0",
+    "@vuepress/client": "2.0.0-beta.51",
+    "@vuepress/plugin-pwa": "2.0.0-beta.51",
+    "@vuepress/plugin-pwa-popup": "2.0.0-beta.51",
+    "@vuepress/plugin-register-components": "2.0.0-beta.51",
+    "@vuepress/plugin-search": "2.0.0-beta.51",
+    "@vuepress/plugin-shiki": "2.0.0-beta.51",
+    "@vuepress/utils": "2.0.0-beta.51",
+    "cross-env": "^7.0.3",
+    "less": "^4.1.2",
+    "prettier": "^2.2.1",
+    "vite": "^3.2.0",
+    "vue": "3.2.44",
+    "vuepress": "2.0.0-beta.51",
     "vuepress-plugin-demoblock-plus": "^2.0.4"
   },
-  "devDependencies": {
-    "@ddongui/vuepress-plugin-demo-block": "^2.0.0-beta.51.2",
-    "@types/jest": "^27.0.1",
-    "@typescript-eslint/eslint-plugin": "^5.4.0",
-    "@typescript-eslint/parser": "^5.4.0",
-    "@vue/cli-plugin-babel": "~5.0.0",
-    "@vue/cli-plugin-eslint": "~5.0.0",
-    "@vue/cli-plugin-router": "~5.0.0",
-    "@vue/cli-plugin-typescript": "~5.0.0",
-    "@vue/cli-plugin-unit-jest": "~5.0.0",
-    "@vue/cli-plugin-vuex": "~5.0.0",
-    "@vue/cli-service": "~5.0.0",
-    "@vue/eslint-config-typescript": "^9.1.0",
-    "@vue/test-utils": "^2.0.0-0",
-    "@vue/vue3-jest": "^27.0.0-alpha.1",
-    "@vuepress/plugin-container": "^2.0.0-beta.60",
-    "babel-jest": "^27.0.6",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.28.0",
-    "eslint-plugin-react-hooks": "^4.3.0",
-    "eslint-plugin-vue": "^8.0.3",
-    "jest": "^27.0.5",
-    "less-loader": "^6.2.0",
-    "lint-staged": "^11.1.2",
-    "node-sass": "^8.0.0",
-    "prettier": "^2.4.1",
-    "sass": "^1.58.0",
-    "sass-loader": "^13.2.0",
-    "ts-jest": "^27.0.4",
-    "typescript": "~4.5.5",
-    "vue-loader": "^17.0.1",
-    "vuepress": "^2.0.0-beta.51.2",
-    "vuepress-plugin-demo-block": "^0.7.2",
-    "vuepress-plugin-demo-container": "^0.2.0"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true,
-      "vue/setup-compiler-macros": true
-    },
-    "extends": [
-      "plugin:vue/vue3-essential",
-      "eslint:recommended",
-      "@vue/typescript/recommended",
-      "plugin:prettier/recommended"
-    ],
-    "parserOptions": {
-      "ecmaVersion": 2020
-    },
-    "rules": {},
-    "overrides": [
-      {
-        "files": [
-          "**/__tests__/*.{j,t}s?(x)",
-          "**/tests/unit/**/*.spec.{j,t}s?(x)"
-        ],
-        "env": {
-          "jest": true
-        }
-      }
-    ]
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead",
-    "not ie 11"
-  ],
-  "gitHooks": {},
-  "lint-staged": {
-    "*.{js,jsx,vue,ts,tsx}": "vue-cli-service lint"
+  "engines": {
+    "node": ">=16.0.0"
   }
 }

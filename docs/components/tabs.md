@@ -5,15 +5,15 @@
 
 
 
-```javascript
+```js
 import rdTab from 'Reed-d';
 Vue.use(rdTab);
 ```
 
 ## 示例
 ### 常规用法
-::: tip
-```html
+::: demo
+```vue
 <template>
   <rdTab :items="defaultitem"></rdTab>
 </template>

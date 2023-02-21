@@ -1,15 +1,15 @@
 # Avatar 头像
 用来代表用户或事物，支持图片、图标或字符展示。
 ## 使用方法
-```javascript
+```js
 import rdAvatar from 'Reed-d';
 Vue.use(rdAvatar);
 ```
 ## 实例
 ### 基本
 头像有三种尺寸，两种形状可选
-::: tip
-```html
+::: demo
+```vue
 <template>
     <rd-avatar size="small"  imgSrc="http://8.142.19.67:3000/images/cat1.jpg"/>
     <rd-avatar size="default"  imgSrc="http://8.142.19.67:3000/images/cat1.jpg"/>
@@ -28,8 +28,8 @@ Vue.use(rdAvatar);
 :::
 ### 类型
 支持两种类型：图片和字符(包括字体图标)，其中字符型可以自定义图标颜色及背景色。
-::: tip
-```html
+::: demo
+```vue
 <template>
     <rd-avatar size="small" bg="green">Tom</rd-avatar>
     <rd-avatar bg="pink">Alen</rd-avatar>
@@ -44,8 +44,8 @@ Vue.use(rdAvatar);
 :::
 ### 阴影和边距
 可以为边框添加阴影效果，以及设置内边距
-::: tip
-```html
+::: demo
+```vue
 <template>
     <rd-avatar size="large" shade :padding="3"  imgSrc="http://8.142.19.67:3000/images/cat1.jpg"/>
     <rd-avatar size="large"  shape="square" shade :padding="3" 		      imgSrc="http://8.142.19.67:3000/images/cat1.jpg"/>

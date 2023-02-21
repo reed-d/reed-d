@@ -4,15 +4,15 @@
 - 当有大量结构化的数据要展示时
 - 当需要对数据进行筛选、排序、自定义操作等复杂行为时
 ## 使用方式
-```javascript
+```js
 import rdTable from 'Reed-d';
 Vue.use(rdTable);
 ```
 ## 使用
 ### 基础用法
 简单的表格，最后一列是各种操作
-::: tip
-```html
+::: demo
+```vue
 <template>
 	<rd-table :columns="columns" :dataSource="data">
       <template #headerCell="{column}">
@@ -127,8 +127,8 @@ import {reactive} from 'vue'
 :::
 ### 带边框
 添加边框，表头和页脚以及隔行变色
-::: tip
-```html
+::: demo
+```vue
 <template>
  <rd-table :columns="columns" :dataSource="data" border strip>
       <template #headerCell="{column}">
@@ -232,8 +232,8 @@ import {reactive} from 'vue'
 :::
 ### 可展开
 当表格内容较多不能一次性完全展示时。
-::: tip
-```html
+::: demo
+```vue
 <template>
     <rd-table @expand = "handleExpand" 
     :columns="columns" :dataSource="data"  strip>
@@ -362,139 +362,12 @@ const handleExpand = (record:Data) => {
 :::
 ### 筛选和排序
 对某一列数据进行筛选，使用列的 filters 属性来指定需要筛选菜单的列，onFilter 用于筛选当前数据。 对某一列数据进行排序，通过指定列的 sorter 函数即可启动排序按钮。sorter: function(rowA, rowB) { ... }， rowA、rowB 为比较的两个行数据。
-::: tip
-```html
-<template>
-    <rd-table @change="handleChange" 
-        :columns="columns" :dataSource="data" strip>
-          <template #headerCell="{column}">
-            <template v-if="column.key=='name'">
-              <span>😊{{column.title}}</span>
-            </template>
-          </template>
-          <template #bodyCell="{column,text,index,record}">
-            <template v-if="column.key=='name'">
-              <a href="">{{text}}</a>
-            </template>
-            <template v-if="column.key=='action'">
-              <button @click="edit(record,index)">编辑</button>
-              <button @click="del(record,index)">删除</button>
-            </template>
-          </template>
-          </template>
-    </rd-table>
-</template>
-<script setup lang='ts'>
-import {reactive} from 'vue'
-type TableData = {
-  key:string;
-  name:string;
-  sex:string;
-  age:number;
-  address:string;
-}
-const columns = [
-  {
-    title: 'Name',
-    dataIndex: 'name',
-    key: 'name',
-    width: 300
-  },
-  {
-    title: 'Sex',
-    dataIndex: 'sex',
-    key: 'sex',
-    width:200,
-    filters: [
-      {text: 'man', value: 'man'},
-      {text: 'femal', value: 'femal'}
-    ],
-    onFilter: (value: string, record: TableData) => {
-      return record.sex===value
-    }
-  },
-  {
-    title: 'Age',
-    dataIndex: 'age',
-    key: 'age',
-    sort: (arg1:TableData, arg2:TableData) => {
-      return arg1.age-arg2.age
-    }
-  },
-  {
-    title: 'Address',
-    dataIndex: 'address',
-    key: 'address',
-    width: 300
-  },
-  {
-    title: 'action',
-    key: 'action',
-    width: 300
-  }
-];
-const datas = [
-  {
-    key: '1',
-    name: 'John Brown',
-    sex:'man',
-    age: 32,
-    address: 'New York No. 1 Lake Park',
-  },
-  {
-    key: '2',
-    name: 'Jim Green',
-    sex: 'femal',
-    age: 42,
-    address: 'London No. 1 Lake Park',
-  },
-  {
-    key: '3',
-    name: 'Joe Black',
-    sex: 'man',
-    age: 32,
-    address: 'Sidney No. 1 Lake Park',
-  },
-  {
-    key: '4',
-    name: 'Joe Green',
-    sex: 'femal',
-    age: 35,
-    address: 'Sidney No. 1 Lake Park',
-  },
-  {
-    key: '5',
-    name: 'Joe Json',
-    sex: 'man',
-    age: 37,
-    address: 'Sidney No. 1 Lake Park',
-  },
-  {
-    key: '6',
-    name: 'Joe Jackson',
-    sex: 'man',
-    age: 39,
-    address: 'Sidney No. 1 Lake Park',
-  },
-];
-const data = reactive(datas)
-const edit = (record:Data,index:number) => {
-  console.log(record,index)
-  record.age=18
-}
-const del = (record:Data,index:number) => {
-  console.log(record,index)
-}
-const handleChange = (dataSource:TableData) => {
-  console.log(dataSource)
-}
-</script>
-```
-:::
+
+
 ### 固定表头
 方便一页内展示大量数据，需要和 scroll.height配合使用
-::: tip
-```html
+::: demo
+```vue
 <template>
     <rd-table :columns="columns" :dataSource="data" 
     :scroll="{height:200}" strip>
@@ -632,8 +505,8 @@ const handleChange = (dataSource:TableData) => {
 :::
 ### 固定列
 对于列数很多的数据，可以固定前后的列，横向滚动查看其它数据，需要和 scroll.width配合使用。
-::: tip
-```html
+::: demo
+```vue
 <template>
     <rd-table :columns="columns" :dataSource="data" 
      :scroll="{width:600}" strip>
@@ -772,8 +645,8 @@ import {reactive} from 'vue'
 :::
 ### 空状态
 数据为空时的状态，可配合emptyText插槽实现自定义
-::: tip
-```html
+::: demo
+```vue
 <template>
  	<rd-table :columns="columns" :dataSource="data" strip>
       <template #headerCell="{column}">
@@ -837,8 +710,8 @@ const data = reactive(datas)
 :::
 ### 加载状态
 数据加载时的状态，可配合loadingText插槽实现自定义
-::: tip
-```html
+::: demo
+```vue
 <template>
  	<rd-table :columns="columns" :dataSource="data" loading strip>
       <template #headerCell="{column}">

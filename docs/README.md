@@ -15,7 +15,7 @@ npm install
 我们提供了 `reed-d/包名` npm 包，通过下面命令即可完成安装，`reed-d` 依赖于 与 `vue`，所以不要忘记安装依赖包。
 
 ```bash
-npm i @reed-d/components -S
+npm i @reed-d/examples -S
 ```
 
 ## 引入 reed-d/components
@@ -26,7 +26,7 @@ npm i @reed-d/components -S
 
 ```js
 import Vue from 'vue';
-import reed from 'reed-d/components';
+import reed from 'reed-d/examples';
 
 Vue.use(reed)
 ```
@@ -35,7 +35,7 @@ Vue.use(reed)
 
 ```js
 import Vue from 'vue';
-import { button } from '@sinokit/components'; // 引入单个组件，如 JsonEditor
+import { button } from '@sinokit/examples'; // 引入单个组件，如 JsonEditor
 
 Vue.component('button', JsonEditor);
 ```

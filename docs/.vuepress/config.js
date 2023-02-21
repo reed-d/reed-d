@@ -1,6 +1,5 @@
 import { defineUserConfig } from 'vuepress'
 import { defaultTheme } from '@vuepress/theme-default'
-import { demoblockPlugin } from 'vuepress-plugin-demoblock-plus'
 export default defineUserConfig({
     lang: 'zh-CN',
     title: '你好， VuePress ！',
@@ -8,37 +7,37 @@ export default defineUserConfig({
     theme: defaultTheme({
         sidebar: [
             {
-                text:'首页',
-                link:'/'
+                text: '首页',
+                link: '/'
             },
-            // SidebarItem
             {
-                text: 'Foo',
-                link: '/guide',
+                text: 'Components',
+                link: '/components/select',
                 children: [
-                    // SidebarItem
-                    {
-                        text: 'github',
-                        link: 'https://github.com',
-                        children: [],
-                    },
-                    // 字符串 - 页面文件路径
-                    '/foo/bar.md',
-                ],
-            },
-            // 字符串 - 页面文件路径
-            {
-                text:'Components',
-                link:'/components/select',
-                children:[
                     {
                         text: 'Select',
                         link: '/components/select'
+                    },
+                    {
+                        text: 'avatar',
+                        link: '/components/avatar'
+                    },
+                    {
+                        text: 'button',
+                        link: '/components/button'
+                    },
+                    {
+                        text: 'table',
+                        link: '/components/table'
+                    },
+                    {
+                        text: 'tabs',
+                        link: '/components/tabs'
                     }
                 ]
             }
         ],
-        navbar:[
+        navbar: [
             { text: 'Home', link: '/' },
             { text: 'Guide', link: '/guide/' },
             { text: 'External', link: 'https://google.com' },
@@ -48,7 +47,7 @@ export default defineUserConfig({
     plugins: [
 
     ],
-    })
+})
 
 
 
